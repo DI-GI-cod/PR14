@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    font-size: 1rem; 
+}
+
+header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c; 
+    color: white;
+}
+
+
+nav {
+    display: flex;
+    background-color: #4d6719;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #4d6719;
+    width: 100%;
+}
+
+.menu li {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-left: 1px solid #7ba428;
+    position: relative; 
+}
+
+.menu > li:last-child {
+    border-right: 1px solid #7ba428;
+}
+
+.menu li a {
+    display: block;
+    padding: 0 25px;
+    line-height: 40px;
+    color: #9acd32;
+    text-decoration: none;
+}
+
+.menu li a:hover,
+.menu li.active > a {
+    color: #ffffff;
+    background: #9acd32;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #4d6719;
+    list-style: none;
+    padding: 0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.submenu li {
+    border-left: none;
+    border-top: 1px solid #7ba428;
+}
+
+.submenu li a {
+    color: #9acd32;
+    line-height: 35px;
+    padding: 0 15px;
+}
+
+.submenu li a:hover {
+    background: #9acd32;
+    color: #ffffff;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+.fakeimg {
+    background-color: #aaaaaa;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #333333;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #dddddd;
+}
+
+@media screen and (max-width: 700px) {
+    .row, nav {
+        flex-direction: column;
+    }
+    
+    .menu {
+        flex-direction: column;
+    }
+    
+    .menu li {
+        border-left: none;
+        border-bottom: 1px solid #7ba428;
+    }
+
+    .menu > li:last-child {
+        border-right: none;
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+    }
+}
